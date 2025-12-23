@@ -1,0 +1,14 @@
+# fastapi
+# uvicorn
+# psycopg2-binary
+# python-dotenv
+# passlib[bcrypt]
+# pydantic
+fastapi
+uvicorn
+psycopg2-binary
+python-dotenv
+passlib[bcrypt]
+pydantic[email]
+argon2-cffi
+sendgrid
