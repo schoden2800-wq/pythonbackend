@@ -12,3 +12,8 @@ passlib[bcrypt]
 pydantic[email]
 argon2-cffi
 sendgrid
+
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
+google-api-python-client
