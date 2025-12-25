@@ -32,3 +32,7 @@ class AddEmployee(BaseModel):
     name: str
     email: EmailStr
     designation: str
+class UpdateEmployee(BaseModel):
+    name: str
+    email: EmailStr
+    designation: str

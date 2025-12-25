@@ -261,3 +261,20 @@ def delete_employee(employee_id: int):
         (employee_id,)
     )
     return cur.fetchone()
+# =========================
+# UPDATE EMPLOYEE
+# =========================
+def update_employee(employee_id: int, name: str, email: str, designation: str):
+    cur = get_cursor()
+    cur.execute(
+        """
+        UPDATE users
+        SET name=%s,
+            email=%s,
+            designation=%s
+        WHERE id=%s AND role='employee'
+        RETURNING id, name, email, designation, role
+        """,
+        (name, email, designation, employee_id)
+    )
+    return cur.fetchone()
