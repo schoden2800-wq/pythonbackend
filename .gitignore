@@ -1,7 +1,4 @@
 .env
-venv
-node_modules/
-__pycache__/
 venv/
 .venv/
 __pycache__/
