@@ -190,19 +190,32 @@ def save_otp(email, otp, expiry):
     )
 
 
+# def verify_otp(email, otp):
+#     cur = get_cursor()
+#     cur.execute(
+#         """
+#         SELECT * FROM users
+#         WHERE email=%s
+#           AND reset_otp=%s
+#           AND reset_otp_expiry > NOW()
+#         """,
+#         (email, otp)
+#     )
+#     return cur.fetchone()
+
 def verify_otp(email, otp):
     cur = get_cursor()
     cur.execute(
         """
-        SELECT * FROM users
+        SELECT *
+        FROM users
         WHERE email=%s
           AND reset_otp=%s
-          AND reset_otp_expiry > NOW()
+          AND reset_otp_expiry > (NOW() AT TIME ZONE 'UTC')
         """,
         (email, otp)
     )
     return cur.fetchone()
-
 
 def update_password(email, password):
     cur = get_cursor()
