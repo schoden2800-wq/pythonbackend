@@ -31,3 +31,4 @@ class ResetPassword(BaseModel):
 class AddEmployee(BaseModel):
     name: str
     email: EmailStr
+    designation: str
